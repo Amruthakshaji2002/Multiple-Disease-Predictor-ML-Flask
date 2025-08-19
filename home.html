@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+    body {
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    h1, h2 {
+        font-family: 'Times New Roman', Times, serif;
+        color: #000000;
+    }
+    
+    a[href] {
+        color: black;
+        text-decoration: none;
+    }
+  
+    .button {
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        margin-top: 50px;
+        border-radius: 30px;
+        transition: background-color 0.3s;
+        text-align: center;
+        width: 200px; /* Adjust the width as needed */
+        height: 250px; /* Adjust the height as needed */
+        margin-right: 90px;
+        margin-left: 90px;
+  
+    
+    }
+    
+    .button img {
+        width: 100%;
+        height: auto;
+    }
+
+    .button-text {
+        font-size: 20px;
+        color: rgb(9, 0, 0);
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background color */
+        padding: 10px;
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    .button:hover {
+        background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background color on hover */
+    }
+
+    footer {
+        text-align: center;
+        font-size: 25px; /* Adjust the font size as needed */
+        margin-top: 90px;
+        color: #000000;
+    }
+    
+    body {
+        background-image: url('/static/backgroundimage.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+</style>
+
+<div class="about">
+  <center>
+    <h1>Welcome to Multiple Disease Predictor Site</h1>
+    <h2>The trained Machine Learning model can predict whether a person is suffering from a disease or not on the basis of details provided to it.</h2>
+  </center>
+  
+  <h2>This site offers the following disease prediction:</h2>
+  <div>
+    <a href="{{ url_for('diabetes') }}" class="button">
+        <img src="/static/diabetes.png" alt="Diabetes Image">
+        <span class="button-text">Diabetes</span>
+    </a>
+    <a href="{{ url_for('parkinsons') }}" class="button">
+        <img src="/static/parkinsons.png" alt="Parkinsons Image">
+        <span class="button-text">Parkinsons</span>
+    </a>
+    <a href="{{ url_for('heartdisease') }}" class="button">
+        <img src="/static/heart disease.jpg" alt="Heart Disease Image">
+        <span class="button-text">Heart Disease</span>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <h6>Note: This site is just a dummy project. Please don't take any disease prediction seriously. We don't take any responsibility for wrong predictions.</h6>
+</footer>
+{% endblock %}
